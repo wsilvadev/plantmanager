@@ -5,8 +5,16 @@ import wateringImg from "../../assets/watering.png";
 import { Entypo } from "@expo/vector-icons";
 
 import styles from "./style";
+import { useNavigation } from "@react-navigation/native";
 
 export default function Welcome() {
+
+  const navigation = useNavigation()
+
+  function handleStart(){
+    navigation.navigate('UserIdentification')
+  }
+
   return (
     <SafeAreaView style={styles.container}>
         <View style={styles.wrapper}>
@@ -21,7 +29,7 @@ export default function Welcome() {
         Não esqueça mais de regar suas plantas. Nós cuidamos de lembrar vocé
         sempre que precisar
       </Text>
-      <TouchableOpacity style={styles.button} activeOpacity={0.7}>
+      <TouchableOpacity style={styles.button} activeOpacity={0.7} onPress={handleStart}>
         <Entypo style={styles.buttonIcon} name="chevron-thin-right" />
       </TouchableOpacity>
         </View>
