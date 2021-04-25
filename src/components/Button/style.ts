@@ -1,21 +1,21 @@
 import {StyleSheet} from 'react-native';
 import colors from '../../styles/colors'
+import fonts from '../../styles/fonts';
 
 const styles = StyleSheet.create({
   
-    button:{
+    container:{
         backgroundColor: colors.green,
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 16,
-        marginBottom: 10,
         height: 66,
-        width: 66
     },
-    buttonText: {
+    text: {
         color: colors.white,
         fontSize: 40,
-        opacity: 0.8
+        opacity: 0.8,
+        fontFamily: fonts.heading
     }
 
 

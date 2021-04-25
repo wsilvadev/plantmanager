@@ -11,8 +11,8 @@ interface ButtonProps extends TouchableOpacityProps{
 export default function Button({title, ...rest}: ButtonProps ){
     return (
         <SafeAreaView >
-            <TouchableOpacity style={styles.button} activeOpacity={0.7} {...rest}>
-                <Text style={styles.buttonText}>
+            <TouchableOpacity style={styles.container} activeOpacity={0.7} {...rest}>
+                <Text style={styles.text}>
                   {title}
                 </Text>
             </TouchableOpacity>
