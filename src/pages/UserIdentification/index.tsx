@@ -10,10 +10,12 @@ import {
   Keyboard,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import styles from "./style";
 import Button from "../../components/Button";
 import colors from "../../styles/colors";
+import { Alert } from "react-native";
 
 export default function UserIdentification() {
   const [isFocused, setIsFocused] = useState(false);
@@ -32,7 +34,11 @@ export default function UserIdentification() {
   };
   const navigation = useNavigation();
 
-  function handleSubmit() {
+ async function handleSubmit() {
+    if(!name) return Alert.alert("Me diz como chamar você 😪")
+
+    await AsyncStorage.setItem("@plantmanager:user", name);
+
     navigation.navigate("Confirmation");
   }
   return (
